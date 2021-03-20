@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import Body from './Body/Body';
+import Start from './Body/Start';
 import Checkout from './Body/Checkout';
 import Header from './Header/Header';
 import Login from './Body/Login';
@@ -22,6 +23,10 @@ function App() {
         
             <Checkout/>
            
+          </Route>
+
+          <Route path='/start'>
+            <Start/>
           </Route>
 
           <Route path="/login">
