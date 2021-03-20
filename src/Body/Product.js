@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Product.css";
-import Button from './Button';
+
 
 function Product({title, image, price, rating }) {
     return (
@@ -14,7 +14,7 @@ function Product({title, image, price, rating }) {
             </div> 
 
         <img src ={image}/>
-        <Button ButtonStyle='btn--outline'>Add to Basket</Button>
+        <button ButtonStyle='btn--outline'>Add to Basket</button>
         </div>
     )
 }
