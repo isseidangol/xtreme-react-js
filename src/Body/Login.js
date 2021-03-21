@@ -29,7 +29,7 @@ class login extends Component{
         <div className="login">
             <Link to="/">
            <img className="login_logo"
-            src=""/>
+            src="im2.png"/>
             </Link>
 
             <div className="login_container">

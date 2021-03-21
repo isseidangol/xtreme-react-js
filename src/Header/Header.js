@@ -11,7 +11,7 @@ class Header extends Component{
         return(
            <div className='header'>
             <Link to = "/">
-            <img className = "logo" src="logo3.png"/> 
+            <img className = "logo" src="im.png"/> 
             </Link>   
                
             
@@ -29,7 +29,7 @@ class Header extends Component{
                    <Link to="/login">
                    <div className='header_option'>
                         <span className='header_optionOne'>
-                            Hello Guest
+                            Hello 
                         </span>
                         <span className='header_optionTwo'>
                             Sign In 

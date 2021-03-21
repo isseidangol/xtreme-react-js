@@ -26,7 +26,7 @@ class Register extends Component{
         return(
             <div className="register">
                 <Link to ="/">
-                <img className="register_logo" src=""/>
+                <img className="register_logo" src="im2.png"/>
                 </Link>
 
 
