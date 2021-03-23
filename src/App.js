@@ -5,6 +5,7 @@ import Body from './Body/Body';
 import Start from './Body/Start';
 import Checkout from './Body/Checkout';
 import Header from './Header/Header';
+import AddProduct from './Body/AddProduct';
 import Login from './Body/Login';
 import Register from './Body/Register';
 import Update from './Body/Update';
@@ -50,6 +51,7 @@ function App() {
            
           <Route path="/"> 
           <Header/>
+          <AddProduct/>
            <Body/>
          
           </Route>
