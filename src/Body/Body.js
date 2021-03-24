@@ -31,6 +31,7 @@ class Body extends Component{
                      <Product/>
                      <Product/> 
                   </div>
+                  
                 </div>
                
 

@@ -1,5 +1,5 @@
 
-import { Button } from './Button'
+import Button  from './Button'
 import React from 'react'
 import './Start.css'
 
@@ -10,6 +10,7 @@ function Start() {
             <h3>Fashions fade, style is Eternal.</h3>
             <div className='start_btn'>
                <Button type="button"
+               
                buttonStyle="btn--warning--solid"
                buttonSize="btn--large">Male</Button>
 

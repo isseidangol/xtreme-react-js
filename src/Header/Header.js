@@ -12,7 +12,19 @@ class Header extends Component{
            <div className='header'>
             <Link to = "/">
             <img className = "logo" src="im.png"/> 
-            </Link>   
+            </Link> 
+
+            <Link to ="/male">
+                <div className="male">
+                    <p>MALE</p>
+                </div>
+                </Link>
+             
+             <Link to = "/">
+                <div className="female">
+                    <p>FEMALE</p>
+                </div>
+                </Link>
                
             
    

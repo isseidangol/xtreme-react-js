@@ -51,7 +51,7 @@ function App() {
            
           <Route path="/"> 
           <Header/>
-          <AddProduct/>
+         
            <Body/>
          
           </Route>

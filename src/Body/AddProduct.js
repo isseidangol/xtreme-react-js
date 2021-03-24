@@ -1,15 +1,21 @@
-import { Component } from "react";
+import { Component,state,addProduct,changeHandler } from "react";
 import axios from "axios";
+import Button  from './Button'
 
 class AddProduct extends Component{
     state = {
         pname:'',
         pdesc:'',
         pprice:'',
-        ppimage:''
+        ppimage:'',
+        config :{ //to check the tokenn of the user
+            headers : {
+                authorization: `Bearer ${localStorage.getItem('token')}` 
+            }
+        }
     }
     addProduct =(e)=>{
-        e.preventDefault();
+        e.preventDefault();//prevent from default behaviour(refresh) 
         const productData = {
             pname : this.state.pname,
             pdesc : this.state.pdesc,
@@ -17,6 +23,12 @@ class AddProduct extends Component{
             pimage : this.state.pimage
         }
         axios.post("http://localhost:90/product/insert",productData)
+        .then((response)=>{
+
+        })
+        .catch((err)=>{
+
+        })
     }
 
     
@@ -55,7 +67,9 @@ class AddProduct extends Component{
                 </p>
 
                 <button onClick={this.addProduct}>Add Product</button>
-
+                <Button type="button"
+               buttonStyle="btn--warning--solid"
+               buttonSize="btn--large">women</Button>
 
             </form>
             </div>

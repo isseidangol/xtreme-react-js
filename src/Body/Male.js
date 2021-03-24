@@ -1,32 +1,46 @@
-import React from 'react'
-import Footer from '../Footer/Footer'
+import {Component} from 'react';
+import Footer from '../Footer/Footer';
 import './Male.css';
 import Product from './Product';
 
-function Male() {
-    return (
-        <div>
-            <div className="male">
-                <div className="male_container">
-                    <div className="male_image"/>
-                    <div className="male_row">
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                    </div>
+class Male extends Component{
+    render(){
 
-                    <div className="male_row">
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                    </div>
+   
+ return (
+    <div>
+    <div className="home">
+        <div className="home_container">
+          <div
+          className="home_image"
+          /> 
+          
+          <div className="home_row">
+             <Product title="Leather jacket" 
+             price ={45} 
+             image= "https://i.pinimg.com/originals/51/99/7d/51997dbfdb2d7d87c347635f08ec2a4e.jpg" />
+            
+             <Product/>
+             <Product/>
+            
+          </div>
 
-                </div>
-
-            </div>
-            <Footer/>
+          <div className="home_row">
+         
+             <Product/>
+             <Product/>
+             <Product/> 
+          </div>
+          
         </div>
+       
+
+       
+    </div>
+    <Footer/>
+    </div>
     )
 }
+}
 
-export default Male
+export default Male;

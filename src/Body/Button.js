@@ -14,7 +14,7 @@ const STYLES = [
 
 const SIZE = ['btn--medium','btn--large'];
 
-export const Button =({
+const Button =({
     childern,
     type,
     onClick,

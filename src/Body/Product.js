@@ -2,6 +2,7 @@ import React from 'react'
 import "./Product.css";
 
 
+
 function Product({title, image, price, rating }) {
     return (
         <div className="product">
@@ -15,6 +16,7 @@ function Product({title, image, price, rating }) {
 
         <img src ={image}/>
         <button ButtonStyle='btn--outline'>Add to Basket</button>
+        
         </div>
     )
 }
