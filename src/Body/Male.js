@@ -12,7 +12,7 @@ class Male extends Component{
     <div className="home">
         <div className="home_container">
           <div
-          className="home_image"
+          className="maleimg"
           /> 
           
           <div className="home_row">

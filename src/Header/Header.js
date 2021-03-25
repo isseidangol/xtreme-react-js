@@ -16,13 +16,13 @@ class Header extends Component{
 
             <Link to ="/male">
                 <div className="male">
-                    <p>MALE</p>
+                    <button className=" btn btn-outline-warning mr-3">MALE</button>
                 </div>
                 </Link>
              
              <Link to = "/">
                 <div className="female">
-                    <p>FEMALE</p>
+                    <button className="btn btn-outline-primary">FEMALE</button>
                 </div>
                 </Link>
                
