@@ -12,6 +12,7 @@ import Update from './Body/Update';
 import  'bootstrap/dist/css/bootstrap.min.css'
 
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
+import Footer from './Footer/Footer';
 
 function App() {
   return (
@@ -33,6 +34,12 @@ function App() {
 
           </Route>
 
+          <Route path="/add">
+            <Header/>
+            <AddProduct/>
+            <Footer/>
+          </Route>
+
           <Route path='/start'>
             <Start/>
           </Route>
@@ -49,11 +56,15 @@ function App() {
             <Update/>
           </Route>
            
-          <Route path="/"> 
+          <Route path="/body"> 
           <Header/>
          
            <Body/>
          
+          </Route>
+
+          <Route path="/">
+            <Start/>
           </Route>
 
 

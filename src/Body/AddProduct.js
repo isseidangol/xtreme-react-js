@@ -1,5 +1,6 @@
 import { Component,state,addProduct,changeHandler } from "react";
 import axios from "axios";
+import './AddProduct.css'
 
 
 class AddProduct extends Component{
@@ -66,10 +67,8 @@ class AddProduct extends Component{
                     onChange={this.changeHandler}/>
                 </p>
 
-                <button onClick={this.addProduct}>Add Product</button>
-                <button type="button"
-               buttonStyle="btn--warning--solid"
-               buttonSize="btn--large">women</button>
+                <button className="btn text-black btn-outline-primary mr-3 " onClick={this.addProduct}>Add Product</button>
+              
 
             </form>
             </div>

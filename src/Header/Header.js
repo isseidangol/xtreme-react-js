@@ -20,7 +20,7 @@ class Header extends Component{
                 </div>
                 </Link>
              
-             <Link to = "/">
+             <Link to = "/body">
                 <div className="female">
                     <button className="btn btn-outline-primary">FEMALE</button>
                 </div>
