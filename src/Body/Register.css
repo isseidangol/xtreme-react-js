@@ -17,7 +17,7 @@
 }
 
 .register_container{
-    width: 300px;
+    width: 100px;
     height: fit-content;
     display: flex;
     flex-direction:column ;

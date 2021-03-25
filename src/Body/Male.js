@@ -4,7 +4,9 @@ import './Male.css';
 import Product from './Product';
 
 class Male extends Component{
+  
     render(){
+      localStorage.setItem("checked",true)
 
    
  return (

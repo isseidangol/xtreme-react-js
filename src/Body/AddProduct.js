@@ -1,6 +1,6 @@
 import { Component,state,addProduct,changeHandler } from "react";
 import axios from "axios";
-import Button  from './Button'
+
 
 class AddProduct extends Component{
     state = {
@@ -67,9 +67,9 @@ class AddProduct extends Component{
                 </p>
 
                 <button onClick={this.addProduct}>Add Product</button>
-                <Button type="button"
+                <button type="button"
                buttonStyle="btn--warning--solid"
-               buttonSize="btn--large">women</Button>
+               buttonSize="btn--large">women</button>
 
             </form>
             </div>

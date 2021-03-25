@@ -7,6 +7,7 @@ import "./Body.css";
 class Body extends Component{
 
     render(){
+        // localStorage.setItem("checked",true)
         return(
             <div>
             <div className="home">
