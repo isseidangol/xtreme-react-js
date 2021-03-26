@@ -43,7 +43,7 @@ class login extends Component{
                     <h5>Password</h5>
                     <input type="password" name="password" value={this.state.password} onChange={this.changeHandler}/>
 
-                    <button className="login_signInButton" onClick={this.submitLogin}>Sign In</button>
+                    <button className="login_btn btn text-black btn-primary mr-3" onClick={this.submitLogin}>Sign In</button>
                 </form>
 
                 <p>
@@ -51,7 +51,7 @@ class login extends Component{
                     to our <b>XTREAM</b> terms and condition.
                 </p>
                 <Link to="/Register">
-                <button className="login_registerButton">Create account</button>
+                <button className="register_btn btn text-black btn-primary mr-3">Create account</button>
                 </Link>
 
             </div>

@@ -30,7 +30,7 @@ class Register extends Component{
                 </Link>
 
 
-            <Container className="register_container">
+            <div className="register_container">
                 <h1>Register</h1>
                 <form>
                     <h5>Username</h5>
@@ -45,10 +45,10 @@ class Register extends Component{
                     <input type ="text" value = {this.state.Email} 
                     onChange={(event)=>{this.setState({Email: event.target.value})}}/>
 
-                    <button className="register_submitButton" onClick={this.submitUser}>Submit</button>
+                    <button className="register_submitButton btn text-black btn-primary mr-3" onClick={this.submitUser}>Submit</button>
                     
                 </form>
-            </Container>
+            </div>
             </div>
            
         )

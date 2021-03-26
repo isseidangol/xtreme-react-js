@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import {Component,state,switchFemale,switchMale} from 'react';
 import  './Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
@@ -6,25 +6,38 @@ import {Container,Row,Col}from "react-bootstrap";
 import {Link} from "react-router-dom"
 
 class Header extends Component{
+   
+     switchMale = (e)=>{
+        
+        localStorage.setItem('gender',"Male");
+        window.location.href="/male"
+    }
+
+    switchFemale = (e)=>{
+       
+       localStorage.setItem('gender',"Female");
+       window.location.href="/male"
+   }
   
     render(){
+        
         return(
            <div className='header'>
             <Link to = "/">
             <img className = "logo" src="im.png"/> 
             </Link> 
 
-            <Link to ="/male">
+           
                 <div className="male">
-                    <button className=" btn btn-outline-warning mr-3">MALE</button>
+                    <button className=" btn btn-outline-warning mr-3"onClick={this.switchMale}>MALE</button>
                 </div>
-                </Link>
              
-             <Link to = "/body">
+             
+            
                 <div className="female">
-                    <button className="btn btn-outline-primary">FEMALE</button>
+                    <button className="btn btn-outline-primary"  onClick={this.switchFemale}>FEMALE</button>
                 </div>
-                </Link>
+               
                
             
    

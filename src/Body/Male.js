@@ -1,13 +1,30 @@
-import {Component} from 'react';
+import {Component,state} from 'react';
 import Footer from '../Footer/Footer';
 import './Male.css';
 import Product from './Product';
-
+import axios from 'axios';
+import {Container,Row,Col} from 'react-bootstrap';
 class Male extends Component{
+   state={
+      products : [],
+      gender:localStorage.getItem('gender')
+   }
   
-    render(){
-      localStorage.setItem("checked",true)
+   componentDidMount()
+   {
+      axios.get("http://localhost:90/product/showall/"+this.state.gender)
+      .then((response)=>{
+        
+         this.setState({products:response.data.data})
+      })
+      .catch((err)=>{
+         console.log(err);
+      })
+   }
 
+    render(){
+     
+      console.log(this.state)
    
  return (
     <div>
@@ -15,24 +32,33 @@ class Male extends Component{
         <div className="home_container">
           <div
           className="maleimg"
-          /> 
-          
+          > 
+          </div>
           <div className="home_row">
-             <Product title="Leather jacket" 
-             price ={45} 
-             image= "https://i.pinimg.com/originals/51/99/7d/51997dbfdb2d7d87c347635f08ec2a4e.jpg" />
+          <Container fluid>
+             <Row>
+
+           
+          {
+             this.state.products.map((val)=>{
+                return(
+               
+                  <Col lg={4}>
+                    
+                  <Product title = {val.pname} image = {val.pimage} price = {val.pprice}/>
+                  
+                  </Col>
             
-             <Product/>
-             <Product/>
-            
+               
+                )
+             })
+          }
+         
+         </Row>
+          </Container>
           </div>
 
-          <div className="home_row">
          
-             <Product/>
-             <Product/>
-             <Product/> 
-          </div>
           
         </div>
        

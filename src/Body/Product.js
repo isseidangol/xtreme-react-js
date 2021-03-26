@@ -3,7 +3,7 @@ import "./Product.css";
 
 
 
-function Product({title, image, price, rating }) {
+function Product({title, image, price}) {
     return (
         <div className="product">
            <div className = "product_info">
@@ -14,7 +14,7 @@ function Product({title, image, price, rating }) {
               </p>
             </div> 
 
-        <img src ={image}/>
+        <img src ={`http://localhost:90/${image}`}/>
         <button ButtonStyle='btn--outline'>Add to Basket</button>
         
         </div>
