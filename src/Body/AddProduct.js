@@ -60,7 +60,10 @@ class AddProduct extends Component{
     }
     render(){
         return(
+            <div className="add">
+
             <div className="add_container">
+            <h1>Add Products</h1>
                  <form>
                 <h5> Product Name</h5>
                    <input type="text" name="pname" value={this.state.pname} 
@@ -89,11 +92,12 @@ class AddProduct extends Component{
                     </select>
                
 
-                <button className="btn text-black btn-outline-primary mr-3 " onClick={this.addProduct}>Add to male</button>
+                <button className="btn_add btn text-black btn-primary mr-3 " onClick={this.addProduct}>Add Product</button>
               
               
 
             </form>
+            </div>
             </div>
         )
     }
