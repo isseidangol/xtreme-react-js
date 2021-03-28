@@ -60,39 +60,34 @@ class AddProduct extends Component{
     }
     render(){
         return(
-            <div>
+            <div className="add_container">
                  <form>
-                <p>
-                    Product Name
-                    <input type="text" name="pname" value={this.state.pname} 
+                <h5> Product Name</h5>
+                   <input type="text" name="pname" value={this.state.pname} 
                     onChange={this.changeHandler}/>
-                </p>
+              
 
-                <p>
-                    Product Description
+                <h5>Product Description</h5>
                     <input type="text" name="pdesc" value={this.state.pdesc}
                     onChange={this.changeHandler}/>
-                </p>
+               
 
-                <p>
-                    Product Price
+                <h5>Product Price</h5>
                     <input type="text" name="pprice"  value={this.state.pprice}
                     onChange={this.changeHandler}/>
-                </p>
+               
 
-                <p>
-                    Product image
-                    <input type="file" name="pimage" 
+                <h5> Product image</h5>
+                   <input type="file" name="pimage" 
                     onChange={this.fileHandler}/>
-                </p>
+              
 
-                <p>
-                    Category
-                    <select name="category" onChange={this.changeHandler}>
+                <h5> Category</h5>
+                   <select name="category" onChange={this.changeHandler}>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
-                </p>
+               
 
                 <button className="btn text-black btn-outline-primary mr-3 " onClick={this.addProduct}>Add to male</button>
               
