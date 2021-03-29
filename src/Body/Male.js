@@ -28,8 +28,8 @@ class Male extends Component{
    
  return (
     <div>
-    <div className="home">
-        <div className="home_container">
+    <div className="home container-fluid px-0">
+        <div className="home_container container-fluid px-0">
           <div
           className="maleimg"
           > 

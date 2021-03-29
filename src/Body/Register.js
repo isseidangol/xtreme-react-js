@@ -8,7 +8,8 @@ class Register extends Component{
     state = {
         UserName : "",
         Password : "",
-        Email : ""
+        Email : "",
+        userType:""
 
     }
 
@@ -17,7 +18,8 @@ class Register extends Component{
         const userData = {
             UserName : this.state.UserName,
             Password : this.state.Password,
-            Email : this.state.Email
+            Email : this.state.Email,
+            userType : this.state.userType
         }
         axios.post("http://localhost:90/insert/user",userData)
 
@@ -44,6 +46,11 @@ class Register extends Component{
                     <h5>Email</h5>
                     <input type ="text" value = {this.state.Email} 
                     onChange={(event)=>{this.setState({Email: event.target.value})}}/>
+
+                    <h5>UserType</h5>
+                    <input type ="text" value = {this.state.userType} 
+                    onChange={(event)=>{this.setState({userType: event.target.value})}}/>
+
 
                     <button className="register_submitButton btn text-black btn-primary mr-3" onClick={this.submitUser}>Submit</button>
                     

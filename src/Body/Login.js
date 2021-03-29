@@ -19,8 +19,12 @@ class login extends Component{
         e.preventDefault();
         axios.post("http://localhost:90/account/login", this.state)
         .then((response)=>{
+            if(response.data.success === true)
+            {
+                localStorage.setItem('token',response.data.token);//to save the token after user logged in
+                localStorage.setItem('userType',response.data.userType);//to save the token after user logged in
+            }
             console.log(response);
-            localStorage.setItem('token',response.data.token);//to save the token after user logged in
         })        
         .catch((err)=>{
             console.log(err.response)

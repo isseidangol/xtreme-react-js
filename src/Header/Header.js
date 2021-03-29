@@ -6,7 +6,14 @@ import {Container,Row,Col}from "react-bootstrap";
 import {Link} from "react-router-dom"
 
 class Header extends Component{
-   
+    state={
+        config:{
+            headers:{
+                'authorization':`Bearer ${localStorage.getItem('token')}`
+            }
+        }
+     }
+     
      switchMale = (e)=>{
         
         localStorage.setItem('gender',"Male");
@@ -20,7 +27,8 @@ class Header extends Component{
    }
   
     render(){
-        
+        const token = localStorage.getItem('token')
+        const userType = localStorage.getItem('userType')
         return(
            <div className='header'>
             <Link to = "/">
@@ -48,9 +56,9 @@ class Header extends Component{
                    <SearchIcon className="header_searchIcon"/>
                </div>
 
-               
-
                <div className="header_nav">
+                
+                    
                    <Link to="/login">
                    <div className='header_option'>
                         <span className='header_optionOne'>
@@ -61,8 +69,14 @@ class Header extends Component{
                         </span>
                    </div>
                    </Link>
+                   {!token ? (<>
+                </>):(<>
+                </>)}
+               
                    
-                  
+                <Link >
+                  {userType}
+                </Link>
 
                 <Link to = "/Checkout">
                    <div className="header_optionBasket">
@@ -70,11 +84,11 @@ class Header extends Component{
                      <ShoppingBasketIcon/>
                      
                      
-                     <span className="header_optionLineTwo 
-                     header_basketCount">0</span>
+                    
                      </div>  
                   
                 </Link>
+               
 
                  
                </div>
