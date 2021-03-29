@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import {Component, state, changeHandler, submitLogin } from "react";
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert'
 import './Login.css';
 
 class login extends Component{
@@ -21,6 +22,12 @@ class login extends Component{
         .then((response)=>{
             if(response.data.success === true)
             {
+                swal({
+                    "title":"Success!!",
+                    "text":"logged in",
+                    "icon":"success"
+                })
+
                 localStorage.setItem('token',response.data.token);//to save the token after user logged in
                 localStorage.setItem('userType',response.data.userType);//to save the token after user logged in
             }

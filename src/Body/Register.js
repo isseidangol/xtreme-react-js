@@ -2,6 +2,7 @@ import { Component,submitUser } from 'react';
 import { Container,state } from 'react-bootstrap';
 import axios from 'axios'; 
 import './Register.css';
+import swal from 'sweetalert'
 import { Link } from 'react-router-dom';
 
 class Register extends Component{
@@ -22,6 +23,14 @@ class Register extends Component{
             userType : this.state.userType
         }
         axios.post("http://localhost:90/insert/user",userData)
+        if(response.data.success == true)
+        {
+            swal({
+                "title":"Success!!",
+                "text":"Registration done",
+                "icon":"success"
+            })
+        }
 
     }
     render(){
