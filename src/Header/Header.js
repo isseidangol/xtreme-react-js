@@ -2,6 +2,7 @@ import {Component,state,switchFemale,switchMale} from 'react';
 import  './Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {Container,Row,Col}from "react-bootstrap";
 import {Link} from "react-router-dom"
 
@@ -77,6 +78,10 @@ class Header extends Component{
                 <Link >
                   {userType}
                 </Link>
+
+                <div className="header_logout">
+                    <ExitToAppIcon/>
+                </div>
 
                 <Link to = "/Checkout">
                    <div className="header_optionBasket">
