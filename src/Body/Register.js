@@ -10,7 +10,9 @@ class Register extends Component{
         UserName : "",
         Password : "",
         Email : "",
-        userType:""
+        userType:"",
+        fullName:""
+
 
     }
 
@@ -20,17 +22,24 @@ class Register extends Component{
             UserName : this.state.UserName,
             Password : this.state.Password,
             Email : this.state.Email,
-            userType : this.state.userType
+            userType : this.state.userType,
+            fullName:this.state.fullName
         }
         axios.post("http://localhost:90/insert/user",userData)
-        if(response.data.success == true)
-        {
+        .then((response)=>{
+            
+        
             swal({
                 "title":"Success!!",
                 "text":"Registration done",
                 "icon":"success"
             })
-        }
+            
+        
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
 
     }
     render(){
@@ -44,12 +53,15 @@ class Register extends Component{
             <div className="register_container">
                 <h1>Register</h1>
                 <form>
+                <h5>Full name</h5>
+                    <input type ="text"   value = {this.state.fullName} 
+                    onChange={(event)=>{this.setState({fullName: event.target.value})}}/>
                     <h5>Username</h5>
-                    <input type ="text" value = {this.state.UserName} 
+                    <input type ="text"  value = {this.state.UserName} 
                     onChange={(event)=>{this.setState({UserName: event.target.value})}}/>
 
                     <h5>Password</h5>
-                    <input type ="text" value = {this.state.Password} 
+                    <input type ="password" value = {this.state.Password} 
                     onChange={(event)=>{this.setState({Password: event.target.value})}}/>
 
                     <h5>Email</h5>

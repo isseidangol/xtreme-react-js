@@ -1,4 +1,4 @@
-import {Component,state,switchFemale,switchMale} from 'react';
+import {Component,state,switchFemale,switchMale,logout} from 'react';
 import  './Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
@@ -19,12 +19,19 @@ class Header extends Component{
         
         localStorage.setItem('gender',"Male");
         window.location.href="/male"
+       
     }
 
     switchFemale = (e)=>{
        
        localStorage.setItem('gender',"Female");
        window.location.href="/male"
+   }
+
+   logout = (e)=>{
+    localStorage.clear();
+    window.location.href = "/start"
+    window.location.reload()
    }
   
     render(){
@@ -66,21 +73,16 @@ class Header extends Component{
                             Hello 
                         </span>
                         <span className='header_optionTwo'>
-                            Sign In 
+                        {!token ? (<> SignIn
+                </>):(<> {userType}
+                </>)}  
                         </span>
                    </div>
                    </Link>
-                   {!token ? (<>
-                </>):(<>
-                </>)}
+                 
                
-                   
-                <Link >
-                  {userType}
-                </Link>
-
-                <div className="header_logout">
-                    <ExitToAppIcon/>
+                   <div className="header_logout">
+                    <Link onClick={this.logout}><ExitToAppIcon/></Link>
                 </div>
 
                 <Link to = "/Checkout">

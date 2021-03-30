@@ -22,19 +22,31 @@ class login extends Component{
         .then((response)=>{
             if(response.data.success === true)
             {
+
+                localStorage.setItem('token',response.data.token);//to save the token after user logged in
+                localStorage.setItem('userType',response.data.data.userType);//to save the token after user logged in
                 swal({
                     "title":"Success!!",
-                    "text":"logged in",
+                    "text":response.data.data.userType,
                     "icon":"success"
                 })
 
-                localStorage.setItem('token',response.data.token);//to save the token after user logged in
-                localStorage.setItem('userType',response.data.userType);//to save the token after user logged in
+                window.location.href = "/male"
+
+                
+            }
+            else
+            {
+                swal({
+                    "title":"Success!!",
+                    "text":response.data.message,
+                    "icon":"success"
+                })
             }
             console.log(response);
         })        
         .catch((err)=>{
-            console.log(err.response)
+            console.log(err)
         })
     }
     render(){  return (

@@ -12,6 +12,10 @@ class Male extends Component{
   
    componentDidMount()
    {
+      if(this.state.gender == null)
+      {
+         this.state.gender = "Male"
+      }
       axios.get("http://localhost:90/product/showall/"+this.state.gender)
       .then((response)=>{
         
@@ -45,7 +49,7 @@ class Male extends Component{
                
                   <Col lg={4}>
                     
-                  <Product title = {val.pname} image = {val.pimage} price = {val.pprice}/>
+                  <Product title = {val.pname} image = {val.pimage} price = {val.pprice} id={val._id}/>
                   
                   </Col>
             

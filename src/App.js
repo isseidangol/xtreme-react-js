@@ -1,7 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
 import Male from './Body/Male'
-
 import Start from './Body/Start';
 import Checkout from './Body/Checkout';
 import Header from './Header/Header';
@@ -10,7 +9,7 @@ import Login from './Body/Login';
 import Register from './Body/Register';
 import Update from './Body/Update';
 import  'bootstrap/dist/css/bootstrap.min.css'
-
+import Logout from './Body/Logout'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import Footer from './Footer/Footer';
 
@@ -45,6 +44,7 @@ function App() {
           </Route>
 
           <Route path="/login">
+            
             <Login/>
           </Route>
 
@@ -52,14 +52,20 @@ function App() {
             <Register/>
           </Route>
 
-          <Route path="/Update">
+          <Route path="/Update/:id">
+            <Header/>
             <Update/>
+            <Footer/>
           </Route>
            
           
 
           <Route path="/">
             <Start/>
+          </Route>
+
+          <Route path="/logout">
+          <Logout/>
           </Route>
 
 
