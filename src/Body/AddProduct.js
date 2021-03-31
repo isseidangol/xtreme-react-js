@@ -92,7 +92,7 @@ class AddProduct extends Component{
                     </select>
                
 
-                <button className="btn_add btn text-black btn-primary mr-3 " onClick={this.addProduct}>Add Product</button>
+                <button className="btn_add btn text-black btn-success mr-3 " onClick={this.addProduct}>Add Product</button>
               
               
 

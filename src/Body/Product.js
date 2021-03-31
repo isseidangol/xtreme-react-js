@@ -57,6 +57,7 @@ function Product({title, image,description, price,id}) {
     return (
        
         <div className="product">
+            <img src ={`http://localhost:90/${image}`}/>
            <div className = "product_info">
               <p>{title}</p> 
               <p>{description}</p>
@@ -66,7 +67,7 @@ function Product({title, image,description, price,id}) {
               </p>
             </div> 
 
-        <img src ={`http://localhost:90/${image}`}/>
+        
         {
             userType == "Admin" || userType == "Seller"?
             (
