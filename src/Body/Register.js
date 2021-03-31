@@ -74,6 +74,7 @@ class Register extends Component{
 
 
                     <button className="register_submitButton btn text-black btn-primary mr-3" onClick={this.submitUser}>Submit</button>
+                    <Link to ="/login"><button className="register_submitButton btn text-black btn-outline-primary mr-3" >Already have an account</button></Link>
                     
                 </form>
             </div>

@@ -46,6 +46,7 @@ function App() {
           <Route path="/login">
             
             <Login/>
+            {/* <Footer/> */}
           </Route>
 
           <Route path="/Register">

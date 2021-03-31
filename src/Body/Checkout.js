@@ -50,7 +50,7 @@ function Checkout() {
                             <Card.Body>
                                 <Card.Title className="text-center">{product.pid.pname}</Card.Title>
                                 <p><strong>Quantity: </strong>{product.quantity}</p>
-                                <p><strong>Price: </strong>{product.price}</p>
+                                <p><strong>Price: $</strong>{product.price}</p>
                                 <button></button>
 
                             

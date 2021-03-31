@@ -74,7 +74,7 @@ class login extends Component{
                     to our <b>XTREAM</b> terms and condition.
                 </p>
                 <Link to="/Register">
-                <button className="register_btn btn text-black btn-primary mr-3">Create account</button>
+                <button className="register_btn btn text-black btn-outline-primary mr-3">Create account</button>
                 </Link>
 
             </div>

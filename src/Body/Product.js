@@ -6,7 +6,7 @@ import {Col,Row,Container} from 'react-bootstrap'
 import swal from 'sweetalert'
 
 
-function Product({title, image, price,id}) {
+function Product({title, image,description, price,id}) {
     
     let [auth,setAuth] = useState({
         "config":{
@@ -59,6 +59,7 @@ function Product({title, image, price,id}) {
         <div className="product">
            <div className = "product_info">
               <p>{title}</p> 
+              <p>{description}</p>
               <p className="product_price">
                     <small>$</small>
                     <strong>{price}</strong>
@@ -76,7 +77,7 @@ function Product({title, image, price,id}) {
                         </Col>
 
                         <Col lg={6}>
-                        <button className="btn_update btn text-black btn-outline-primary btn-block mr-3"><Link to={"/Update/"+id}>Update</Link></button>
+                        <button className="btn_update btn text-black btn-outline-warning btn-block mr-3"><Link to={"/Update/"+id}>Update</Link></button>
                         </Col>
                 </Row>
                
@@ -85,7 +86,7 @@ function Product({title, image, price,id}) {
             ):
             (
                
-                <button className="btn text-black btn-outline-primary mr-3" onClick={(event)=>{addToCart(event,id)}}>Add to Basket</button>
+                <button className="btn text-black btn-success mr-3" onClick={(event)=>{addToCart(event,id)}}>Add to Basket</button>
             )
         }
         

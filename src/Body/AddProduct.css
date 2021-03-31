@@ -20,6 +20,7 @@
     border-radius: 5px;
     border: 1px solid lightgray;
     padding: 20px;
+    box-shadow: 0px 0px 5px 0.6px;
 }
 
 .add_container h5{
