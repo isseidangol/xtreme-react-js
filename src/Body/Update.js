@@ -1,8 +1,9 @@
 import React from "react";
-import { Component, updateProduct, changeHandler } from "react";
+import { Component, updateProduct, changeHandler,fileHandler } from "react";
 import axios from "axios";
 import { Container, state } from "react-bootstrap";
 import { withRouter } from "react-router";
+import './Update.css'
 
 class Update extends Component {
   state = {
@@ -42,10 +43,16 @@ class Update extends Component {
       pimage: this.state.pimage,
       id: this.props.match.params.id,
     };
+    let formData = new FormData();
+    formData.append("pname",this.state.pname);
+    formData.append("pdesc",this.state.pdesc);
+    formData.append("pprice",this.state.pprice);
+    formData.append("pimage",this.state.pimage);
+    formData.append("id",this.state.id);
     axios
       .put(
         "http://localhost:90/product/update",
-        productData,
+        formData,
         this.state.config
       )
       .then((response) => {})
@@ -59,45 +66,57 @@ class Update extends Component {
       [e.target.name]: e.target.value,
     });
   };
+
+  fileHandler = (e)=>{
+  
+    this.setState({
+      [e.target.name] : e.target.files[0]
+    });
+
+  }
   render() {
     return (
-      <div>
+      <div className="update">
+      <div className="update_container">
+        <h1>Update</h1>
+
         <form>
-          <p>
+          <h5>Name</h5>
             <input
               type="text"
               name="pname"
               value={this.state.pname}
               onChange={this.changeHandler}
             />
-          </p>
+         
 
-          <p>
+          <h5>Description</h5>
             <input
               type="text"
               name="pdesc"
               value={this.state.pdesc}
               onChange={this.changeHandler}
             />
-          </p>
+        
 
-          <p>
+          <h5>Price</h5>
             <input
               type="text"
               name="pprice"
               value={this.state.pprice}
               onChange={this.changeHandler}
             />
-          </p>
+         
 
-          <p>
+          
             <input type="file" name="pimage" onChange={this.fileHandler} />
-          </p>
+         
 
-          <button className="update_updateButton" onClick={this.updateProduct}>
+          <button className="btn text-black btn-outline-primary mr-3" onClick={this.updateProduct}>
             Update
           </button>
         </form>
+      </div>
       </div>
     );
   }

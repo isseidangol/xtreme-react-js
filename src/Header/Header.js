@@ -53,8 +53,21 @@ class Header extends Component{
                 <div className="female">
                     <button className="btn btn-outline-primary"  onClick={this.switchFemale}>FEMALE</button>
                 </div>
+
+                {
+            userType == "Admin"?
+            (
+                <>
+                <Link className="btn text-black btn-outline-primary mr-3" to="/add">Add product</Link>
                
+                </>
+            ):
+            (
+                    <></>
+           
+            )
                
+            }
             
    
 

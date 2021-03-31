@@ -34,10 +34,10 @@ class Male extends Component{
     <div>
     <div className="home container-fluid px-0">
         <div className="home_container container-fluid px-0">
-          <div
-          className="maleimg"
-          > 
-          </div>
+           
+          <div className="maleimg"> 
+          {/* <img src="bg.jpg" alt=""></img> */}
+           </div>
           <div className="home_row">
           <Container fluid>
              <Row>
