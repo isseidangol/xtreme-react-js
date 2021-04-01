@@ -1,9 +1,12 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,details} from 'react'
 import"./Checkout.css";
 import Footer from "../Footer/Footer";
 import { Link } from 'react-router-dom';
-import {Col,Row,Container,Card} from 'react-bootstrap'
+import {Col,Row,Container,Card,Button} from 'react-bootstrap'
 import axios from 'axios';
+import DeleteProduct from './deleteProduct';
+
+
 
 function Checkout() {
     let [myCart,setCart] = useState([]);
@@ -17,7 +20,7 @@ function Checkout() {
     useEffect(()=>{
         axios.get('http://localhost:90/getMyCart',auth.config)
         .then((response)=>{
-          
+          console.log(response)
             setCart(
                 response.data.data
             )
@@ -26,8 +29,23 @@ function Checkout() {
             console.log(err);
         })
     },[])
+    const deleteProduct = (e,id)=>{
+        
+        axios.delete("http://localhost:90/cart/delete/"+id,auth.config)
+        .then((response)=>{
+           
+
+                window.location.href = "/checkout"
+            
+        })
+        .catch((err)=>
+        {
+            console.log(err);
+        }
+        )
+    }
     return (
-        <div>
+        
         <div className="checkout">
            <div className="checkout_left">
                <Link to="/Update">
@@ -38,39 +56,55 @@ function Checkout() {
              <div>
                 <h2 className="checkout_title">
                     Your shopping basket</h2>
-                    <Row>
+                <Row>
                 {
-                   myCart.map((product)=>{
+                    myCart.map((item)=>{
+                        
                         return(
-                        <Col lg={4}>
-                             <Card className="cart">
-                                 <div className="product__img">
-                            <Card.Img variant="top" src={`http://localhost:90/${product.pid.pimage}`} />
-                            </div>
-                            <Card.Body>
-                                <Card.Title className="text-center">{product.pid.pname}</Card.Title>
-                                <p><strong>Quantity: </strong>{product.quantity}</p>
-                                <p><strong>Price: $</strong>{product.price}</p>
-                                <button></button>
-
                             
-                            </Card.Body>
-                            </Card>   
+                        <div className="cart">
+                        <img src ={`http://localhost:90/${item.pid.pimage}`}/>
+                       <div className = "cart_product_info">{item.pid.pname}
+                          <p>{item.pid.title}</p> 
+                          <p>Quantity: {item.quantity}</p>
+                          <p className="cart_product_price">
+                                <small>Price $</small>
+                                <strong>{item.price}</strong>
+                          </p>
+                          <Row>
+                          <Col lg={4}>
+                        
                         </Col>
+                        <Col lg={4}>
+                       
+                        
+      <button data-toggle="modal" className="btn text-black btn-danger btn-lg-3 mr-3 px-lg-5 " data-target={`#delete${item._id}`} >Delete</button>
+                        <Link className="btn text-black btn-outline-warning btn-lg-3 mr-3 px-lg-5 " to={"/Update/"+item._id}>Update</Link>
+                   
+                     
+                        </Col>
+
+                        <Col lg={4}>
+                        
+                        </Col>
+                </Row>
+                
+                        </div>
+                        <DeleteProduct item={item} key={item._id}/>
+                        </div>
+                        
                         )
-                   }) 
+                         
+                    })
                 }
                 </Row>
             </div>
             
 
-            </div> 
+          
 
            
 
-            <div className="checkout_right">
-              
-            </div>
           
         </div>
 <Footer/>

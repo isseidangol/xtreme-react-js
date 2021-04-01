@@ -38,9 +38,9 @@ class login extends Component{
             else
             {
                 swal({
-                    "title":"Success!!",
+                    "title":"Error!!",
                     "text":response.data.message,
-                    "icon":"success"
+                    "icon":"error"
                 })
             }
             console.log(response);

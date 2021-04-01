@@ -58,7 +58,7 @@ class Header extends Component{
             userType == "Admin"?
             (
                 <>
-                <Link className="btn text-black btn-outline-primary mr-3" to="/add">Add product</Link>
+                <Link className="btn text-black btn-outline-primary ml-3 " to="/add">Add product</Link>
                
                 </>
             ):

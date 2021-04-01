@@ -9,6 +9,7 @@ import Login from './Body/Login';
 import Register from './Body/Register';
 import Update from './Body/Update';
 import  'bootstrap/dist/css/bootstrap.min.css'
+import  'bootstrap/dist/js/bootstrap.min.js'
 import Logout from './Body/Logout'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import Footer from './Footer/Footer';
