@@ -39,8 +39,8 @@ import './UpdateCheckout.css'
 
     render() {
         return (
-            <div>
-                 <div className="update_Checkout">
+            <div className="updateCheckout">
+                
       <div className="updateCheckout_container">
         <h1>Update</h1>
 
@@ -62,7 +62,7 @@ import './UpdateCheckout.css'
             </div>
             </div>
     
-            </div>
+           
      
         )
     }
