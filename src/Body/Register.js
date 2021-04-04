@@ -71,6 +71,7 @@ class Register extends Component{
                     <h5>UserType</h5>
                     <input type ="text" value = {this.state.userType} 
                     onChange={(event)=>{this.setState({userType: event.target.value})}}/>
+                    
 
 
                     <button className="register_submitButton btn text-black btn-primary mr-3" onClick={this.submitUser}>Submit</button>

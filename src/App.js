@@ -6,6 +6,7 @@ import Checkout from './Body/Checkout';
 import Header from './Header/Header';
 import AddProduct from './Body/AddProduct';
 import Login from './Body/Login';
+// import UpdateCheckout from './Body/checkUpdate'
 import Register from './Body/Register';
 import Update from './Body/Update';
 import  'bootstrap/dist/css/bootstrap.min.css'
@@ -13,6 +14,7 @@ import  'bootstrap/dist/js/bootstrap.min.js'
 import Logout from './Body/Logout'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import Footer from './Footer/Footer';
+import UpdateCheckout from './Body/UpdateCheckout';
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
       
 
        <Switch>
-          <Route path="/checkout">
+       <Route path="/checkout">
           <Header/>
         
             <Checkout/>
@@ -60,15 +62,23 @@ function App() {
             <Footer/>
           </Route>
            
-          
-
-          <Route path="/">
-            <Start/>
-          </Route>
-
           <Route path="/logout">
           <Logout/>
           </Route>
+
+          <Route path="/updatecheckout/:id" exact>
+          <Header/>
+          <UpdateCheckout/>
+          <Footer/>
+          </Route>
+
+          <Route path="/">
+            <Start/>
+            
+          </Route>
+
+         
+         
 
 
      

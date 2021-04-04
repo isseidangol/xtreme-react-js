@@ -75,7 +75,14 @@ class Header extends Component{
                    <input
                    className="header_searchInput" type="text"/>
                    <SearchIcon className="header_searchIcon"/>
-               </div>
+                   {/* <Autocomplete
+  id="combo-box-demo"
+  options={top100Films}
+  getOptionLabel={(option) => option.title}
+  style={{ width: 300 }}
+  renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+/>
+            //    </div> */}</div>
 
                <div className="header_nav">
                 

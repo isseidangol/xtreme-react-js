@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {Col,Row,Container,Card,Button} from 'react-bootstrap'
 import axios from 'axios';
 import DeleteProduct from './deleteProduct';
+import { withRouter } from "react-router";
 
 
 
@@ -79,7 +80,7 @@ function Checkout() {
                        
                         
       <button data-toggle="modal" className="btn text-black btn-danger btn-lg-3 mr-3 px-lg-5 " data-target={`#delete${item._id}`} >Delete</button>
-                        <Link className="btn text-black btn-outline-warning btn-lg-3 mr-3 px-lg-5 " to={"/Update/"+item._id}>Update</Link>
+                        <Link className="btn text-black btn-outline-warning btn-lg-3 mr-3 px-lg-5 " to={"/updatecheckout/"+item._id}>Update</Link>
                    
                      
                         </Col>
@@ -116,4 +117,4 @@ function Checkout() {
 
 }
 
-export default Checkout
+export default withRouter(Checkout); 
