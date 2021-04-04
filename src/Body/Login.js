@@ -29,12 +29,15 @@ class login extends Component{
                     "title":"Success!!",
                     "text":response.data.data.userType,
                     "icon":"success"
+                   
                 })
 
                 window.location.href = "/male"
+              
 
                 
             }
+          
             else
             {
                 swal({

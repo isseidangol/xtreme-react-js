@@ -2,6 +2,7 @@ import React, { Component,state,changeHandler,updateProductdata } from 'react'
 import swal from 'sweetalert'
 import axios from "axios";
 import { withRouter } from 'react-router';
+import './UpdateCheckout.css'
 
 
  class UpdateCheckout extends Component {
@@ -14,9 +15,11 @@ import { withRouter } from 'react-router';
       [e.target.name]:e.target.value
     })}
     updateProductdata=(e)=>{
+      window.location.reload()
       e.preventDefault();
       axios.put("http://localhost:90/cart/update/"+this.props.match.params.id,this.state)
       .then((response)=>{
+       
         if(response.data.success == true)
         {
             swal({
@@ -25,6 +28,7 @@ import { withRouter } from 'react-router';
                 "icon":"success"
             })
         }
+       
 })
 .catch((err)=>{
         console.log(err.response)

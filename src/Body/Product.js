@@ -30,7 +30,7 @@ function Product({title, image,description, price,id}) {
                 "text":"Cart Added",
                 "icon":"success"
             })
-            window.location.href = "/checkout"
+            // window.location.href = "/checkout"
             
         })
         .catch((err)=>{
