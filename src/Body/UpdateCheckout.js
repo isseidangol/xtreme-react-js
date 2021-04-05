@@ -15,9 +15,9 @@ import './UpdateCheckout.css'
       [e.target.name]:e.target.value
     })}
     updateProductdata=(e)=>{
-      window.location.reload()
+     
       e.preventDefault();
-      axios.put("http://localhost:90/cart/update/"+this.props.match.params.id,this.state)
+      axios.put("http://localhost:90/cart/update/"+this.props.match.params.id,{quantity:this.state.quantity})
       .then((response)=>{
        
         if(response.data.success == true)
@@ -25,8 +25,10 @@ import './UpdateCheckout.css'
             swal({
                 "title":"Success!!",
                 "text":"Added",
-                "icon":"success"
+                "icon":"success",
+                "timer":3000
             })
+            window.location.href = "/checkout"
         }
        
 })
@@ -37,6 +39,19 @@ import './UpdateCheckout.css'
 
     }
 
+    componentDidMount(){
+      axios.get("http://localhost:90/get/myCart/"+this.props.match.params.id)
+      .then((response)=>{
+        if(response.data.success == true)
+        {
+          this.setState({
+            quantity : response.data.data.quantity
+        
+          })
+        }
+      })
+    }
+
     render() {
         return (
             <div className="updateCheckout">
@@ -45,7 +60,7 @@ import './UpdateCheckout.css'
         <h1>Update</h1>
 
         <form>
-          <h5>Quantity</h5>
+          <h5>Quantity </h5>
             <input
               type="text"
               name="quantity"
