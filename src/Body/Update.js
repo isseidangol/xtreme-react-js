@@ -85,6 +85,7 @@ class Update extends Component {
             <input
               type="text"
               name="pname"
+              field:""
               value={this.state.pname}
               onChange={this.changeHandler}
             />
