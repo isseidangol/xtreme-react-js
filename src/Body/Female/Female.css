@@ -19,9 +19,8 @@
 {
     width: 100%;
     height: 70vh;
-    background: url(bg.jpg);
+    /*background:url(../../../public/Fashion_sale_banner_template.jpg);*/
     background-repeat: no-repeat !important;
-    background-attachment: fixed  !important;
     background-size: cover !important;
   
 }

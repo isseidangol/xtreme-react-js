@@ -1,78 +1,89 @@
-.header{
+.header {
     height: 60px;
     display: flex;
     align-items: center;
     background-color: #131921;
     position: sticky;
-    top :0;
+    top: 0;
     z-index: 100;
 }
 
-.logo{
+.header > a{
+    position: relative;
+    bottom: 7px;
+}
+
+.logo {
     width: 100px;
     object-fit: contain;
     margin: 0 20px;
     margin-top: 18px;
 }
 
-.header_search{
-   display: flex;
-   flex: 1;
-   align-items: center;
-   border-radius: 24px;
+.header_search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
 }
 
-.header_searchInput{
+.header_searchInput {
     height: 12px;
-    padding: 10px;
+    padding: 15px;
     border: none;
     margin-left: 80px;
-    width: 80%
-    
+    width: 80%;
+    border-radius: 5px;
 }
 
-.header_searchIcon{
-    padding:5px;
-    height: 22px !important;
-    background-color: #cd9042
+.header_searchIcon {
+    padding: 5px;
+    height: 30px !important;
+    background-color: #cd9042;
+    width: 45px !important;
+    margin-left: -5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.header_optionOne{
-    font-weight: 100px;
-}
-
-.header_optionOne{
+.header_optionOne {
     font-size: 10px;
 }
 
-.header_optionTwo{
+.header_optionTwo {
     font-size: 17px;
-    font-weight: 800px;
+    font-weight: 800;
 }
 
-.header_optionBasket{
+.header_optionBasket {
     display: flex;
     align-items: center;
     color: white;
     margin-right: 5px;
 }
 
-
-
-
-.header_nav{
-  display: flex;
-  justify-content: space-evenly;  
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
 }
 
-.header_option{
-   display: flex;
-   flex-direction: column;
-   margin-left: 10px;
-   margin-right: 10px;
-   color: white; 
+.header_nav .btn{
+    border: none !important;
+    background: transparent !important;
 }
 
-.header_logout{
-    color:white
+.header_option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+
+
+.header_logout {
+    color: white
 }

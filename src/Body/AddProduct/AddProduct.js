@@ -87,7 +87,7 @@ class AddProduct extends Component{
 
                 <h5> Category</h5>
                    <select name="category" onChange={this.changeHandler}>
-                        <option value="Male">Male</option>
+                        <option value="Index">Index</option>
                         <option value="Female">Female</option>
                     </select>
                

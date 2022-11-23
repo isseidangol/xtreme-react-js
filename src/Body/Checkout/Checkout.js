@@ -1,10 +1,10 @@
 import React,{useState,useEffect,details} from 'react'
 import"./Checkout.css";
-import Footer from "../Footer/Footer";
+import Footer from "../../Footer/Footer";
 import { Link } from 'react-router-dom';
 import {Col,Row,Container,Card,Button} from 'react-bootstrap'
 import axios from 'axios';
-import DeleteProduct from './deleteProduct';
+import DeleteProduct from '../Product/deleteProduct';
 import { withRouter } from "react-router";
 
 

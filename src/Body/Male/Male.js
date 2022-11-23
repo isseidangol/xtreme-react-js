@@ -1,7 +1,7 @@
 import {Component,state} from 'react';
-import Footer from '../Footer/Footer';
+import Footer from '../../Footer/Footer';
 import './Male.css';
-import Product from './Product';
+import Product from '../Product/Product';
 import axios from 'axios';
 import {Container,Row,Col} from 'react-bootstrap';
 class Male extends Component{
@@ -14,7 +14,7 @@ class Male extends Component{
    {
       if(this.state.gender == null)
       {
-         this.state.gender = "Male"
+         this.state.gender = "Index"
       }
       axios.get("http://localhost:90/product/showall/"+this.state.gender)
       .then((response)=>{
@@ -35,8 +35,8 @@ class Male extends Component{
     <div className="home container-fluid px-0">
         <div className="home_container container-fluid px-0">
            
-          <div className="maleimg"> 
-          {/* <img src="bg.jpg" alt=""></img> */}
+          <div className="maleimg">
+           <img src="Fashion_sale_banner_template.jpg" alt="" className="maleimg"/>
            </div>
           <div className="home_row">
           <Container fluid>
